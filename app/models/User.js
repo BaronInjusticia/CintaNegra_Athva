@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+//TODO Exportar tipos de subscripciones
 
-const SALT_FACTOR = 12;
 const Schema =mongoose.Schema;
 
 const UserSchema = new Schema({
