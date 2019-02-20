@@ -29,6 +29,10 @@ const UserSchema = new Schema({
         type:String,
         enum:["Male","Female","NaN"]
     },
+    terapia:{
+    type:String,
+    enum:[]
+    },
     subscription_id:{
         type: Schema.Types.ObjectId,
         ref: "subscriptions"
@@ -36,6 +40,10 @@ const UserSchema = new Schema({
     is_active:{
         type:Boolean,
         default: true
+    },
+    terapeuta:{
+        type:Boolean,
+        default: false
     }
 },{"collation":"users","timestamps": true});
 
