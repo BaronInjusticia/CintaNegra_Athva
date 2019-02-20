@@ -27,11 +27,22 @@ const UserSchema = new Schema({
     },
     gender:{
         type:String,
-        enum:["Male","Female","NaN"]
+        enum:["Masculino","Femenino","Prefiero no especificar"],
+        required: true
     },
     terapia:{
     type:String,
-    enum:[]
+    enum:["TX", "RX", "VX"]
+    },
+    diagnose:{
+        type:String,
+        ref:"cie10array",
+        required: true
+    },
+    pscifarmacologia:{
+        type:Boolean,
+        default: false,
+        required: true
     },
     subscription_id:{
         type: Schema.Types.ObjectId,
