@@ -1,8 +1,8 @@
 const {GraphQLServer} = require("graphql-yoga");
-const resolvers = require("./resolvers");
+const resolvers = require("./app/resolvers");
 const {importSchema} = require("graphql-import");
 const {makeExecutableSchema} = require("graphql-tools");
-const typeDefs =importSchema("./schema.graphql");
+const typeDefs =importSchema("./app/schema.graphql");
 const mongoose =require("mongoose");
 
 const {db} =require("./config");
