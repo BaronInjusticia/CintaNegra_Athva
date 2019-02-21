@@ -1,4 +1,4 @@
-const authActions = require("./authAction");
+const authActions = require("./authActions");
 const userActions = require("./userActions");
 
 module.exports={

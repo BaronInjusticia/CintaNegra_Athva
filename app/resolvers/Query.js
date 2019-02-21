@@ -1,4 +1,4 @@
-const actions = requeire("../actions/");
+const actions = require("../actions/");
 
 const prueba = (_, args, context, info)=>{
     return "ESTOY VIVO!"
