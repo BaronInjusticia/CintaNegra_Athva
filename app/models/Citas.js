@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const CitasSchema = new Schema({
-    cita:{
+    fecha:{
         type: Date,
         required: true,
     },

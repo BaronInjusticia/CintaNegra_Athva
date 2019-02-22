@@ -25,12 +25,12 @@ const server = new GraphQLServer({
 
 const options = {
     port: process.env.PORT || 8000,
-    endpoint: "./graphql",
+    endpoint: "/graphql",
     playground: "/playground"
 }
 
 server.start(options, ({port})=>{
-    console.log('HENSHIN! ${port}')
+    console.log(`HENSHIN! ${port}`)
 });
 
 module.exports = {schema}

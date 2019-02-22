@@ -1,9 +1,23 @@
 const cloudinary = require("cloudinary");
 const dotenv = require("dotenv");
 
+const jwt = require("jsonwebtoken");
+
+const{SECRET_KEY} = require("../config");
+const{getUserById} = require("../actions");
+
 const result = dotenv.config();
 
 if(result.error) console.log(result.error);
+
+function getUserId(context){
+    const Authorization = context.request.get("Authorization");
+    if(Authorization){
+        const token = Authorization.replace("JWT ","");
+        const {_id} = jwt.verify(token, SECRET_KEY);
+        return getUserById(_id);
+    }
+}
 
 function storeUpload(stream){
     cloudinary.config({
@@ -21,5 +35,6 @@ function storeUpload(stream){
 };
 
 module.exports ={
-    storeUpload
+    storeUpload,
+    getUserId
 }
