@@ -32,11 +32,13 @@ const UserSchema = new Schema({
         required: true
     },
     birth_date:{
-        type:Date
+        type:Date,
+        required: true
     },
     gender:{
         type:String,
-        enum: ["Masculino", "Femenino", "Prefiero no especificar"]
+        enum: ["Masculino", "Femenino", "Prefiero no especificar"],
+        required: true
     },
     subscription:{
         type: String,
@@ -54,16 +56,16 @@ const UserSchema = new Schema({
         default: false
     },
     //TODO Preguntarle a chacha nuestros codigos del cie10
-    diagnosis:{
-        type:String,
-        enum:[cie10]
-    },
+    //diagnosis:{
+        //  type:String,
+        //enum:[cie10]
+    //},
     //!LINEA DE SEPARACION
     is_active: {
         type: Boolean,
         default: true
     },
-},{ "collection": "users", "timestamps": true});
+});
 
 UserSchema.pre("save", function(next){
     let user = this;

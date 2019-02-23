@@ -3,14 +3,11 @@ scalar Upload
 type Query{
     prueba:String
     User:[User]
-    Posts:[Post]
 }
 
 type Mutation{
     signup(data: UserCreateInput! ): Auth
     login(email:String!, password:String!):Auth
-    createPost(data:PostCreateInput!):Post
-    deleteUser: (id:ID):User
 }
 
 type Auth{
@@ -30,45 +27,36 @@ type User{
     subscription: SUBSCRIPTION
     terapeuta: String
     terapia_etapa: TERAPIA_ETAPA
-    diagnosis: String #checar lo de cie10
+    diagnosis: String 
     farmacovigilancia: Boolean
     is_active:Boolean
 }
-
 type Consultorio{
     location_map:String
     location:String
     photo:String
 }
-
 type Citas{
     fecha:String
     pago:Boolean
 }
-
+type Terapeuta{
+    first_name: String!
+    last_name:String!
+    email:String!
+    password:String!
+    birth_date:String!
+}
 input UserCreateInput{
     first_name:String!
     last_name:String!
     email:String!
     password:String!
-    birth_date:String
-    gender:GENDER 
+    birth_date:String!
+    gender:GENDER!
     is_active:Boolean
     profile_image:Upload
 }
-
-input UserCreateInput{
-    _id:ID 
-    title: String
-    author: User
-    content: String
-    category: CATEGORIES
-}
-
-input PostCreateInput{
-    title: String
-}
-
 enum GENDER{
     Masculino
     Femenino

@@ -4,7 +4,7 @@ const ENVS = {
     dev:{
         SECRET_KEY:"EoKGnuU7Zh",
         db:{
-           url: "mongodb+srv://Baron:Daruma14@cluster0-gk0nl.mongodb.net/test?retryWrites=true"
+            url: "mongodb+srv://Baron:Daruma14@cluster0-gk0nl.mongodb.net/test?retryWrites=true"
     }
 },
 test:{},

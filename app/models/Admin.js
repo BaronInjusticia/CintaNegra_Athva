@@ -7,12 +7,9 @@ const SALT_FACTOR = 12;
 const Schema = mongoose.Schema;
 
 
-const TerapeutaSchema = new Schema({
+const AdminSchema = new Schema({
+    
     first_name:{
-        type:String,
-        required: true
-    },
-    last_name:{
         type:String,
         required: true
     },
@@ -25,13 +22,9 @@ const TerapeutaSchema = new Schema({
         type:String,
         required: true
     },
-    birth_date:{
-        type:Date,
-        required:true
-    },
 });
 
-TerapeutaSchema.pre("save", function(next){
+AdminSchema.pre("save", function(next){
     let user = this;
     if(!user.isModified("password")){return next();}
     bcrypt.genSalt(SALT_FACTOR, function(err, salt){
@@ -48,4 +41,4 @@ mongoose.Types.ObjectId.prototype.valueOf = function(){
     return this.toString()
 }
 
-module.exports = mongoose.model("terapeuta", TerapeutaSchema)
+module.exports = mongoose.model("admin", AdminSchema)

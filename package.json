@@ -16,6 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "chokidar": "^2.1.2",
     "cie10": "0.0.2",
     "cloudinary": "^1.13.2",
     "dotenv": "^6.2.0",
@@ -25,7 +27,8 @@
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.4.14",
     "morgan": "^1.9.1",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "parser": "^0.1.4"
   },
   "devDependencies": {
     "eslint": "^5.14.1",
