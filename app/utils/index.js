@@ -25,8 +25,9 @@ function storeUpload(stream){
         api_key: process.env.CLOUDINARY_API_KEY,
         api_secret: process.env.CLOUDINARY_SECRET_KEY
     });
+
     return new Promise ((resolve, reject)=>{
-        const buffer = cloudinary.v2.uploader.upload_stream((error,result)=>{
+        const buffer = cloudinary.v2.uploader.upload_stream({ resource_type: "video" },(error, result)=>{
             if(err) reject(error);
             resolve(result)
         });

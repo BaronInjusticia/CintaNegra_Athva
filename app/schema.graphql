@@ -1,3 +1,5 @@
+scalar Upload
+
 type Query{
     prueba:String
     User:[User]
@@ -52,6 +54,7 @@ input UserCreateInput{
     birth_date:String
     gender:GENDER 
     is_active:Boolean
+    profile_image:Upload
 }
 
 input UserCreateInput{
