@@ -13,11 +13,13 @@ const UserSchema = new Schema({
     
     first_name:{
         type:String,
-        required: true
+        required: true,
+        ref: "nombre"
     },
     last_name:{
         type:String,
-        required: true
+        required: true,
+        ref: "ref"
     },
     profile_image:{
         type:String

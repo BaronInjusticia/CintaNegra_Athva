@@ -3,11 +3,28 @@ scalar Upload
 type Query{
     prueba:String
     User:[User]
+    getUserByEmail:[email]
+    getUserById:[_id]
+    getAllActiveUsers:[is_active]
+    getCitas:[pago]
+    getTerapeutaByEmail:[email]
+    getTerapeutaById:[_id]
+    getAllAsignedTerapeuta:[first_name]
+    getAllUsersFarmacovigilancia:[farmacovigilancia]
+    getUserFarmacovigilancia:[farmacovigilancia]
+    getUserByName:[first_name, last_name]
+    getAllUserSubscription:[subscription]
+    getUserSubscription:[subscription]
+    getAllUserTerapiaEtapa:[terapia_etapa]
+    getUserTerapiaEtapa:[terapia_etapa]
+    getTerapeutaByFirstName:[first_name]
 }
 
 type Mutation{
     signup(data: UserCreateInput! ): Auth
     login(email:String!, password:String!):Auth
+    createTerapeuta:
+    createConsultorio:
 }
 
 type Auth{
@@ -33,9 +50,10 @@ type User{
 }
 type Consultorio{
     location_map:String
-    location:String
+    location:String,
     photo:String
-}
+    }
+
 type Citas{
     fecha:String
     pago:Boolean
